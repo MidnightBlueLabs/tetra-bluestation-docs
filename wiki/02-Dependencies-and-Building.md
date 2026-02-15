@@ -103,8 +103,25 @@ Clone the repository:
 ```bash
 git clone https://github.com/MidnightBlueLabs/tetra-bluestation
 ```
+If you want to use another branch, replace `master`. 
+
+```bash
+git checkout master
+```
+
 Build tetra-bluestation:
 ```bash
 . "$HOME/.cargo/env"
+cargo build --release
+```
+
+## Update tetra-bluestation
+Pull latest changes from the repository. Don't forget to cd into the main folder first, and replace `master` if you're using another branch.
+```bash
+git pull origin master
+```
+
+Re-build tetra-bluestation (all pre-existing crates shouldn't need updating)
+```bash
 cargo build --release
 ```
