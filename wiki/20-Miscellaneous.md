@@ -23,7 +23,7 @@ As an RF power amplifier is driven closer to its P1dB point (the output power le
 
 Below is an example of the direct RF output from an SxCeiver, without external amplification:
 
-> ![Spectrum of direct SxCeiver output](./figs/spectrum_sxceiver_direct.jpg)
+![Spectrum of direct SxCeiver output](./figs/spectrum_sxceiver_direct.jpg)
 > *(spectrum capture of direct SxCeiver output)*  
 
 In this configuration, spectral purity is generally good, and adjacent channels remain largely unaffected.
@@ -32,7 +32,7 @@ In this configuration, spectral purity is generally good, and adjacent channels 
 
 If the output level is pushed too far, approaching the amplifier’s P1dB point, the situation changes noticeably:
 
-> ![Spectrum capture with high drive level](./figs/spectrum_sxceiver_pa_overdrive.jpg)
+![Spectrum capture with high drive level](./figs/spectrum_sxceiver_pa_overdrive.jpg)
 > *(spectrum capture with high drive level)*  
 
 In this case, adjacent channels are clearly impacted, even though the baseband signal itself has not changed. This is a classic symptom of insufficient linearity.
@@ -51,7 +51,7 @@ These measures are combined with tight filtering and closed-loop power control.
 
 For most experimental, lab, or radio-amateur scenarios, operating well below the P1dB point already yields acceptable results. 
 
-> ![Spectrum capture with low drive levels and low ACP](./figs/spectrum_sxceiver_pa_linear.jpg)
+![Spectrum capture with low drive levels and low ACP](./figs/spectrum_sxceiver_pa_linear.jpg)
 > *(14-18dBm output, with low spectral spreading)*  
 
 In this example, close to 1 W of RF output is achieved while keeping adjacent-channel spectral spreading at a reasonable level.
