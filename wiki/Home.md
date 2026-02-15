@@ -4,7 +4,7 @@
 ░░▀░░▀▀▀░░▀░░▀░▀░▀░▀░░░░░▀▀░░▀▀▀░▀▀▀░▀▀▀░▀▀▀░░▀░░▀░▀░░▀░░▀▀▀░▀▀▀░▀░▀
 ```
 
-Welcome to the TETRA-BlueStation Wiki. This is a FOSS TETRA stack aimed at providing an extensible basis for TETRA experimentation and research. 
+Welcome to the TETRA-BlueStation Wiki, the documentation platform for BlueStation: a FOSS TETRA stack aimed at providing an extensible basis for TETRA experimentation and research. 
 
 The following Wiki is structured as follows: 
 * **Introduction**: lists all working details, implementation choices, working and non-working features
@@ -12,6 +12,8 @@ The following Wiki is structured as follows:
 * **Dependencies and building**: goes through the dependencies install process as well as install procedure
 * **Configuration**: explains how to properly configure tetra-bluestation for execution
 * **Running TETRA-BlueStation**: lists the steps to start tetra-bluestation and how to improve execution
+* **Contributions, forks and issues**: explains the contribution policies, lists known forks and how to submit an issue
+* **Miscellaneous**: few aspects not tackled in the other chapters
 
 
 > ⚠️ **Experimental Software Warning**
