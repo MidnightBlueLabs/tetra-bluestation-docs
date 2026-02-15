@@ -59,7 +59,7 @@ Users are encouraged to evaluate forks carefully before deploying them in any en
 ### tetra-bluestation sds
 
 - Repository: https://github.com/misadeks/tetra-bluestation/tree/bu2hb
-- Maintainer(s): BU2HP
+- Maintainer(s): BU2HB
 - Primary focus: Implement SDS capability, with a web interface
 - Status: working, experimental  
 - Notes:
