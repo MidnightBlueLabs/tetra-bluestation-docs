@@ -29,3 +29,47 @@ The following Wiki is structured as follows:
 > Do not rely on it for production use, safety-critical systems, or operational networks.
 >
 > If you encounter unexpected behavior, consult the source code and recent commits first, and feel free to report issues or contribute improvements.
+
+## Getting started
+
+This section is intended for readers who want to get a basic setup running quickly.  
+It assumes familiarity with SDRs, Linux systems, and basic RF concepts.
+
+If something does not work as expected, take the time to read the linked sections in detail.
+
+### 1. Check hardware requirements
+
+Before doing anything else, make sure your setup meets the basic requirements:
+
+- A supported SDR with adequate TX/RX capability  
+- A computer capable of handling an SDR workload 
+
+See the relevant hardware and SDR requirements section for details and known-good configurations.
+
+---
+
+### 2. Build the software
+
+Install dependencies (general and those linked to the SDR hardware you're using), clone the repository and build a release binary. 
+
+Follow the build instructions in the build and installation section to ensure all dependencies are correctly installed.
+
+---
+
+### 3. Edit the configuration file
+
+Start from the provided example configuration and adapt it to your setup:
+
+- Select the correct SDR hardware and device-specific settings  
+- Configure frequencies, band, and cell parameters consistently  
+- Verify network identifiers (MCC, MNC, etc.)  
+
+The configuration file reference explains each field in detail and should be consulted carefully.
+
+---
+
+### 4. Run the base station
+
+Once built and configured, start the base station stack by pointing the binary at your TOML file.
+
+For improved scheduling stability, consider running the process with real-time priority, as described in the runtime section.
