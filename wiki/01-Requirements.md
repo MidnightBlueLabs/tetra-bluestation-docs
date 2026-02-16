@@ -40,7 +40,7 @@ The documentation and examples assume a Debian-based system layout, package name
 | **USRP**         | ✅        | Well-supported hardware family with robust timing and synchronization features. |
 | **LibreSDR B205/B210**     | ⚠️       | Supported. Will require a [custom bitstream](https://github.com/lmesserStep/LibreSDRB210). RF performance isn't guaranteed. |
 | **SxCeiver**     | ✅        | Supported via the [SoapySX driver](https://github.com/tejeez/sxxcvr). |
-| **PlutoSDR / Pluto+ / LibreSDR ZynqSDR / OpenSourceSDRLab 7020** | ❌  | Not supported due to lack of reliable timestamping. Might change in the future, [more details here.](https://www.quantulum.co.uk/blog/private-lte-with-plutoplus-sdr/) |
+| **PlutoSDR / Pluto+ / LibreSDR ZynqSDR / OpenSourceSDRLab 7010/7020** | ❌  | Not supported due to lack of reliable timestamping. Might change in the future, [more details here.](https://www.quantulum.co.uk/blog/private-lte-with-plutoplus-sdr/) |
 | **HackRF**       | ❌        | Half-duplex design and timing limitations make it unsuitable for base-station use. |
 | **BladeRF**      | ⚠️        | Expected to be compatible from a hardware perspective, but not implemented yet. Proof-of-concept [here](https://github.com/sg217/tetra-bluestation/tree/feature/bladerf) |
 | **uSDR**      | ⚠️        | Expected to be compatible from a hardware perspective, but not implemented yet.  |
