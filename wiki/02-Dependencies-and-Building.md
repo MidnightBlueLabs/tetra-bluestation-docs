@@ -35,7 +35,7 @@ curl https://sh.rustup.rs -sSf | sh
 ### SxCeiver-related dependencies
 _Skip this section if you're not using the SxCeiver platform._
 
-You might need to downgrade libgpiod. Dedicated guide coming soon.
+You might need to downgrade libgpiod. [Dedicated guide coming soon, refer here for now.](https://github.com/web-rpi/tetra-bluestation/wiki/Installation-libgpiod)
 
 Clone and install SoapySX:
 ```bash
@@ -51,6 +51,7 @@ sudo ldconfig
 ```
 Check that the device is detected:
 ```bash
+ls -l /proc/device-tree/hat
 SoapySDRUtil --find
 ```
 
