@@ -130,7 +130,7 @@ cargo build --release
 ```
 
 ### Forked repository
-[A list of forks is present in this page](./10-Contributions,-forks-and-Issues.md), the example below showcases misadek's version.
+[[A list of forks is present in this page|10-Contributions,-forks-and-Issues]], the example below showcases misadek's version.
 
 Clone the repository:
 ```bash
