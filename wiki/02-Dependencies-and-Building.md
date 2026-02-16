@@ -21,6 +21,7 @@ sudo apt update
 sudo apt install -y --no-install-recommends \
   git make g++ cmake \
   libsoapysdr-dev \
+  soapysdr-tools \
   libasound2-dev \
   clang llvm-dev libclang-dev \
   libgpiod-dev \
