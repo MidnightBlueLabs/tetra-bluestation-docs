@@ -12,6 +12,14 @@ The setup follows this process:
 
 Each step is described in detail in the sections below.
 
+> ⚠️ **These commands have no brain, please use your own!**
+>
+> As a general rule, please take some time to examine (_and understand_) the commands and what they do before copy-pasting them. 
+> Safest practice is not to copy-paste at all but re-typing them. [Here's a small example of why.](https://www.bleepingcomputer.com/news/security/dont-copy-paste-commands-from-webpages-you-can-get-hacked/)
+> We do our best to document as precisely as possible, but honest mistakes can also happen. 
+> 
+> All of it could potentially ruin your setup (from which we cannot be held responsible).
+
 
 ## General Dependencies
 First, update your package list and install the required build and runtime dependencies:
@@ -99,16 +107,40 @@ You should see your USRP model listed on both commands. If not, verify USB/Ether
 
 
 ## Clone and build tetra-bluestation
-_If you want to try another repository with WIP features, replace the official repo URL with the one you want to test._
+You can either build the upstream repository (which contains the latest stable features), or build a fork (which contain the latest experimental features, group calls and Brew interconnect at the time of writing).
+
+### Main upstream repository
+_Skip this section if you're planning to use a fork._
 
 Clone the repository:
 ```bash
 git clone https://github.com/MidnightBlueLabs/tetra-bluestation
+cd tetra-bluestation
 ```
 If you want to use another branch, replace `master`. 
 
 ```bash
 git checkout master
+```
+
+Build tetra-bluestation:
+```bash
+. "$HOME/.cargo/env"
+cargo build --release
+```
+
+### Forked repository
+[A list of forks is present in this page](./10-Contributions,-forks-and-Issues.md), the example below showcases misadek's version.
+
+Clone the repository:
+```bash
+git clone https://github.com/misadeks/tetra-bluestation
+cd tetra-bluestation
+```
+You might want to change the branch to a specific feature set, such as tetrapack-calls `tetrapack-calls`. 
+
+```bash
+git checkout tetrapack-calls
 ```
 
 Build tetra-bluestation:
@@ -123,7 +155,7 @@ Pull latest changes from the repository. Don't forget to cd into the main folder
 git pull origin master
 ```
 
-Re-build tetra-bluestation (all pre-existing crates shouldn't need updating)
+Re-build tetra-bluestation (all pre-existing crates shouldn't need updating, the process should be much faster).
 ```bash
 cargo build --release
 ```
