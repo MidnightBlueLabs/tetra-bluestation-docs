@@ -70,7 +70,7 @@ _Skip this section if you're not using the LimeSDR platform._
 Install LimeSuite and related tools:
 ```bash
 sudo apt update
-sudo apt install -y limesuite liblimesuite-dev limesuite-udev
+sudo apt install -y limesuite liblimesuite-dev limesuite-udev soapysdr-module-lms7
 ```
 Ensure udev rules are installed and reload them if necessary:
 ```bash
@@ -92,7 +92,7 @@ _Skip this section if you're not using the USRP platform._
 Install the UHD driver packages provided by Debian:
 ```bash
 sudo apt update
-sudo apt install -y uhd-host libuhd-dev
+sudo apt install -y uhd-host libuhd-dev soapysdr-module-uhd
 ```
 You will also need to download firmware images, as they're loaded on the SDR platform at each reset:
 ```bash
