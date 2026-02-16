@@ -6,7 +6,7 @@ A “good enough” computer is one that can reliably handle real-time DSP, sche
 
 As a reference point:
 
-- A **Raspberry Pi 4** (4 GB) has been shown to run *tetra-bluestation* reliably in typical test setups.
+- A Raspberry Pi 4 (2 GB) has been shown to run tetra-bluestation reliably in typical test setups.
 - Any modern x86_64 system (laptop, desktop, or small server) with comparable or better performance should be sufficient.
 
 Minimum practical requirements:
@@ -15,13 +15,15 @@ Minimum practical requirements:
   - Quad-core ARMv8 or x86_64 CPU  
   - Comparable or better than Raspberry Pi 4
 - RAM:  
-  - 4 GB minimum (8 GB recommended)
+  - 2 GB minimum (4 GB recommended)
 - Storage:  
   - SSD or fast SD card (slow storage can cause startup or logging issues)
 - USB:  
   - Stable USB 2.0/3.0 connectivity for SDR hardware. 
 
 Real-time scheduling and CPU frequency scaling may significantly affect performance. Systems with aggressive power saving features should be configured accordingly. Plan a Serial console or remote access (SSH) for headless operation.
+
+Performance will also be affected if logging is enabled.
 
 ## Operating System
 
@@ -34,13 +36,15 @@ The documentation and examples assume a Debian-based system layout, package name
 
 | Hardware         | Supported | Notes |
 |------------------|-----------|-------|
-| **LimeSDR**      | ✅        | Full-duplex operation with adequate timestamping support; commonly used for prototyping and testing. |
-| **LimeSDR Mini** | ✅        | Supported; reduced RF front-end compared to LimeSDR. |
+| **LimeSDR / LimeSDR Mini**      | ✅        | Full-duplex operation with adequate timestamping support; commonly used for prototyping and testing. |
 | **USRP**         | ✅        | Well-supported hardware family with robust timing and synchronization features. |
+| **LibreSDR B205/B210**     | ⚠️       | Supported. Will require a [custom bitstream](https://github.com/lmesserStep/LibreSDRB210). RF performance isn't guaranteed. |
 | **SxCeiver**     | ✅        | Supported via the [SoapySX driver](https://github.com/tejeez/sxxcvr). |
-| **PlutoSDR / Pluto+** | ❌  | Not supported due to lack of reliable timestamping. Might change in the future, [more details here.](https://www.quantulum.co.uk/blog/private-lte-with-plutoplus-sdr/) |
+| **PlutoSDR / Pluto+ / LibreSDR ZynqSDR / OpenSourceSDRLab 7020** | ❌  | Not supported due to lack of reliable timestamping. Might change in the future, [more details here.](https://www.quantulum.co.uk/blog/private-lte-with-plutoplus-sdr/) |
 | **HackRF**       | ❌        | Half-duplex design and timing limitations make it unsuitable for base-station use. |
 | **BladeRF**      | ⚠️        | Expected to be compatible from a hardware perspective, but not implemented yet. Proof-of-concept [here](https://github.com/sg217/tetra-bluestation/tree/feature/bladerf) |
+| **uSDR**      | ⚠️        | Expected to be compatible from a hardware perspective, but not implemented yet.  |
+
 
 
 ## Recommended accessories
@@ -54,7 +58,7 @@ A similar SDR# setup is possible.
 
 # Licensing and Regulatory Compliance
 
-Operating a TETRA base station involves **radio transmission**, and therefore falls under national and international telecommunications regulations. Users are solely responsible for ensuring that their use of *tetra-bluestation* complies with all applicable laws and licensing requirements.
+Operating a TETRA base station involves radio transmission, and therefore falls under national and international telecommunications regulations. Users are solely responsible for ensuring that their use of *tetra-bluestation* complies with all applicable laws and licensing requirements.
 
 ## General Responsibilities
 
@@ -82,18 +86,18 @@ For licensed radio amateurs:
 
 For security research and protocol experimentation:
 
-- Prefer **shielded environments**, dummy loads, or attenuated setups.
+- Prefer shielded environments, dummy loads, or attenuated setups.
 - Use conducted RF connections or RF enclosures whenever possible.
 - Avoid over-the-air transmission unless explicitly licensed or authorized.
 - Be aware that decoding, impersonation, or simulation of real networks may be regulated or restricted.
 
 ## Commercial and Public Safety Spectrum
 
-TETRA is widely used in **commercial, government, and public safety networks**.
+TETRA is widely used in commercial, government, and public safety networks.
 
-- **Never transmit** on frequencies allocated to operational TETRA networks without explicit authorization.
+- Never transmit on frequencies allocated to operational TETRA networks without explicit authorization.
 - Unauthorized transmission on these bands may disrupt critical services and can result in severe legal consequences.
 
 ## Disclaimer
 
-The authors and contributors of *tetra-bluestation* assume **no responsibility** for improper or unlawful use of this software. All transmissions are performed at the user’s own risk and responsibility.
+The authors and contributors of tetra-bluestation assume no responsibility for improper or unlawful use of this software. All transmissions are performed at the user’s own risk and responsibility.
