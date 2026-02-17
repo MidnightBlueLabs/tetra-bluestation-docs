@@ -1,78 +1,109 @@
-# Amplifying the SDR output signal
+# Frequently Asked Questions
 
-Most SDRs are not designed to directly drive a TETRA transmitter chain at operational power levels. External amplification is therefore sometimes considered.
+---
 
-> ⚠Please note:  
-> The information below is intentionally high-level and provided for orientation only.  
-> In many small experimental setups (e.g. lab testing, very short-range work, hotspot-style use), typical SDR output levels are often already sufficient.  
-> Adding external amplification should only be considered after a careful assessment of the points below, and with appropriate RF measurement equipment and regulatory awareness as incorrect amplification can easily result in out-of-band emissions, even if the baseband signal itself is correct.
+## General
 
-When experimenting, it is strongly recommended to:
-- Start at very low output power  
-- Use a spectrum analyser to verify spectral purity  
-- Ensure compliance with local regulatory limits  
+### What is tetra-bluestation?
 
-## Practical example: linearity and adjacent channel power
+A free and open-source TETRA base station software stack for experimentation and research. See the [Introduction](./00-Introduction.md) for a full description, and the *What works / Not functional* sections there for the current feature status.
 
-The following examples show that amplification is possible, but linearity quickly becomes the critical factor.  
-The primary issue is usually not harmonic distortion, but rather inter-channel interference, commonly observed as increased adjacent channel power (ACP).
+---
 
-As an RF power amplifier is driven closer to its P1dB point (the output power level at which gain compression begins), non-linear effects increase rapidly. Even if the carrier itself still appears “clean”, energy spreads into adjacent channels.
+### Is this ready for production or operational use?
 
-### Example: direct SDR output
+No. See the warning on the [Home](./Home.md) page.
 
-Below is an example of the direct RF output from an SxCeiver, without external amplification:
+---
 
-![Spectrum of direct SxCeiver output](./figs/spectrum_sxceiver_direct.jpg)
-> *(spectrum capture of direct SxCeiver output)*  
+### May I connect it to TETRAPack - tmo.services - xxx?
 
-In this configuration, spectral purity is generally good, and adjacent channels remain largely unaffected.
+At the time of writing this FAQ, only a specific fork supports connection to TETRAPack. Keep in mind you must be holder of a valid amateur radio license to join that network.
 
-### Example: excessive drive level (near P1dB)
+---
 
-If the output level is pushed too far, approaching the amplifier’s P1dB point, the situation changes noticeably:
+## SDR Hardware Compatibility
 
-![Spectrum capture with high drive level](./figs/spectrum_sxceiver_pa_overdrive.jpg)
-> *(spectrum capture with high drive level)*  
+### Is my SDR compatible?
 
-In this case, adjacent channels are clearly impacted, even though the baseband signal itself has not changed. This is a classic symptom of insufficient linearity.
+See the hardware compatibility table on the [Requirements](./01-Requirements.md) page. The short rule: only SDRs with reliable **full-duplex hardware timestamping** are supported.
 
-### How commercial TETRA transmitters handle amplification
+---
 
-In practice, a TETRA amplification stage typically follows these guidelines:
+### Is the PlutoSDR (or Pluto+, LibreSDR ZynqSDR, OpenSourceSDRLab 7010/7020) compatible?
 
-- Operates far below the P1dB point, by deliberately oversizing the amplifier (e.g. using a 10 W-rated amplifier to produce only 1 W RF output)
-- Favors Class A or Class AB operation (one reason why TETRA transmitter efficiency rarely exceeds ~20%)
-- Uses a linearization loop, often referred to as a Cartesian loop, to measure distortion and pre-correct the signal so that non-linear effects cancel out
+No, not at this time. These devices lack reliable hardware timestamping, which is a hard requirement for base station operation. This may change in the future — see [Requirements](./01-Requirements.md) for details and a reference link.
 
-These measures are combined with tight filtering and closed-loop power control.
+---
 
-### Practical note for experimental and amateur use
+### Is the HackRF compatible?
 
-For most experimental, lab, or radio-amateur scenarios, operating well below the P1dB point already yields acceptable results. 
+No. The HackRF is half-duplex — it cannot transmit and receive at the same time, which a TETRA base station must do. This is a fundamental hardware limitation.
 
-![Spectrum capture with low drive levels and low ACP](./figs/spectrum_sxceiver_pa_linear.jpg)
-> *(14-18dBm output, with low spectral spreading)*  
+---
 
-In this example, close to 1 W of RF output is achieved while keeping adjacent-channel spectral spreading at a reasonable level.
+## Host System
 
-This setup is shown for illustration only and is consistent with the disclaimer above: amplification was only introduced after measurement and conservative gain staging.
+### Can I run this on a Raspberry Pi?
 
-Two separate amplification stages were used in this case:
+Yes — a Raspberry Pi 4 (2 GB) has been confirmed to work. See [Requirements](./01-Requirements.md) for minimum specs and configuration tips (real-time scheduling, SD card speed, etc.). 
+You might be able to get away with lower-spec hardware, but as this software grows, expect the requirements to increase as well. 
 
-- an SPF5189-based gain module, providing roughly +10 dBm output on its own  
-- a commercial final amplifier module originally intended for a TETRA repeater setup  
+BlueStation officialy aims to support Pi5, so if in the future the compute loads turns out to be too heavy, Pi4 support might have to be dropped.
 
-The SPF5189 stage alone already provides useful gain, but also produces harmonics and broadband artifacts. These are not acceptable by themselves and were mitigated by the filtering present in the commercial final stage.
+---
 
-The final stage does provide about 15dB of gain, but draws a standby current of around 2A (with a non-negligible thermal dissipation needed).
+### Is there a ready-made SD card image or binary I can download?
 
-This example illustrates that even modest amplification can introduce unwanted spectral components, and that filtering and measurement are as important as the gain itself.
+No. The software is evolving too fast for packaged images to stay useful. You need to build from source on a Debian-based system — see [Dependencies and Building](./02-Dependencies-and-Building.md).
 
-## References
-Here are some more documentation on this specific issue:
+---
 
-- “TETRA” (Wikipedia - Chapter "Technical Aspects"). Details modulation scheme and why linear amplification is required. https://en.wikipedia.org/wiki/TETRA
-- “Distortion in RF Power Amplifiers” (PDF). Explains spectral regrowth and nonlinearity in RF amplifiers. https://gctjaipur.files.wordpress.com/2015/08/distortion-in-rf-power-amplifiers-ebook-lib.pdf
-- Ahmed, A. “Feedback Linearization of RF Power Amplifier for Wireless Systems” (article). Discusses adjacent channel power ratio (ACPR), EVM, and linearization approaches. https://beei.org/index.php/EEI/article/download/276/186
-- Briffa, M. A. *Linearization of RF Power Amplifiers* (PhD thesis). Includes treatment of Cartesian feedback linearization. https://vuir.vu.edu.au/374/7/BRIFFA%20Mark-thesis_nosignature.pdf
+## Software
+
+### Should I use the main branch or a fork?
+
+Use the main upstream repository for the most stable experience. Forks exist for experimental features (e.g. voice calls via Tetrapack/Brew). See [Contributions, Forks and Issues](./10-Contributions,-forks-and-Issues.md) for the full list of known forks and what they offer.
+
+---
+
+### Does it support voice calls?
+
+Not in the main branch, yet, expect this to change very soon. 
+
+Experimental voice support exists in the [`tetrapack-calls`](https://github.com/misadeks/tetra-bluestation/tree/tetrapack-calls) fork — see [Contributions, Forks and Issues](./10-Contributions,-forks-and-Issues.md).
+
+---
+
+## Configuration
+
+### Where do I start?
+
+Copy the example config and follow the [Configuration](./03-Configuration.md) page. That page lists the minimum fields you must change and explains every parameter.
+
+---
+
+## Legal
+
+### Is it legal to run this?
+
+Transmitting requires authorization. You are solely responsible for compliance. See the *Licensing and Regulatory Compliance* section on the [Requirements](./01-Requirements.md) page.
+
+---
+
+## Getting Help
+
+### I have a question or need help getting started
+
+Join the community Telegram group: [https://t.me/+WtWvrlb43NVkNjE0]
+
+It's the best place for quick questions, setup help, and general discussion.
+
+---
+
+### I think I've found a bug
+
+1. Check the [open issues](https://github.com/MidnightBlueLabs/tetra-bluestation/issues) to see if it's already reported.
+2. If not, open a new issue using the provided issue template in the repository and fill it out as completely as possible. Issues without enough detail are hard to act on and may be deferred.
+
+See [Contributions, Forks and Issues](./10-Contributions,-forks-and-Issues.md) for more on the contribution and issue process.
