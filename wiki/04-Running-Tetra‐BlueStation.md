@@ -10,6 +10,14 @@ chrt 99 ./target/release/tetra-bluestation ./config.toml
 ```
 Note: Real-time scheduling typically requires elevated privileges and appropriate system limits/capabilities.
 
-## Filtering out some logs
+## Logging events
+In the config file, uncomment this line:
+
+```toml
+debug_log = "./verbose_log.txt"
+```
+
+## Filtering out some console messages
 TODO: re-write and explain the usage.
+
 Append `| grep -v "phy\|common\|lmac"` to filter out some logs.
