@@ -98,7 +98,7 @@ You will also need to download firmware images, as they're loaded on the SDR pla
 ```bash
 sudo uhd_images_downloader
 ```
-If you're using a USRP clone (LibreSDR B210 for instance), you might have to replace the original bitstream/firmware. [More informations here](https://github.com/lmesserStep/LibreSDRB210)
+If you're using a USRP clone (LibreSDR B210 for instance), you might have to replace the original bitstream/firmware. [More information here.](https://github.com/lmesserStep/LibreSDRB210)
 
 Check that your USRP device is detected correctly:
 ```bash

@@ -1,4 +1,3 @@
-
 # State of the project
 
 ## What works

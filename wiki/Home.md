@@ -1,3 +1,4 @@
+# Home
 ```
 ░▀█▀░█▀▀░▀█▀░█▀▄░█▀█░░░░░█▀▄░█░░░█░█░█▀▀░█▀▀░▀█▀░█▀█░▀█▀░▀█▀░█▀█░█▀█
 ░░█░░█▀▀░░█░░█▀▄░█▀█░▄▄▄░█▀▄░█░░░█░█░█▀▀░▀▀█░░█░░█▀█░░█░░░█░░█░█░█░█
@@ -15,6 +16,9 @@ The following Wiki is structured as follows:
 * **Contributions, forks and issues**: explains the contribution policies, lists known forks and how to submit an issue
 * **Miscellaneous**: few aspects not tackled in the other chapters
 
+For quick answers to common questions, see the [Frequently Asked Questions](./30-Frequently-Asked-Questions.md) page.
+
+Join the community Telegram group: [https://t.me/+WtWvrlb43NVkNjE0]
 
 > ⚠️ **Experimental Software Warning**
 >
