@@ -1,26 +1,17 @@
-# Frequently Asked Questions
-
----
-
 ## General
 
 ### What is tetra-bluestation?
 
 A free and open-source TETRA base station software stack for experimentation and research. See the [Introduction](./00-Introduction.md) for a full description, and the *What works / Not functional* sections there for the current feature status.
 
----
 
 ### Is this ready for production or operational use?
 
 No. See the warning on the [Home](./Home.md) page.
 
----
-
 ### May I connect it to TETRAPack - tmo.services - xxx?
 
 At the time of writing this FAQ, only a specific fork supports connection to TETRAPack. Keep in mind you must be holder of a valid amateur radio license to join that network.
-
----
 
 ## SDR Hardware Compatibility
 
@@ -28,19 +19,16 @@ At the time of writing this FAQ, only a specific fork supports connection to TET
 
 See the hardware compatibility table on the [Requirements](./01-Requirements.md) page. The short rule: only SDRs with reliable **full-duplex hardware timestamping** are supported.
 
----
 
 ### Is the PlutoSDR (or Pluto+, LibreSDR ZynqSDR, OpenSourceSDRLab 7010/7020) compatible?
 
 No, not at this time. These devices lack reliable hardware timestamping, which is a hard requirement for base station operation. This may change in the future — see [Requirements](./01-Requirements.md) for details and a reference link.
 
----
 
 ### Is the HackRF compatible?
 
 No. The HackRF is half-duplex — it cannot transmit and receive at the same time, which a TETRA base station must do. This is a fundamental hardware limitation.
 
----
 
 ## Host System
 
@@ -51,13 +39,10 @@ You might be able to get away with lower-spec hardware, but as this software gro
 
 BlueStation officialy aims to support Pi5, so if in the future the compute loads turns out to be too heavy, Pi4 support might have to be dropped.
 
----
-
 ### Is there a ready-made SD card image or binary I can download?
 
 No. The software is evolving too fast for packaged images to stay useful. You need to build from source on a Debian-based system — see [Dependencies and Building](./02-Dependencies-and-Building.md).
 
----
 
 ## Software
 
@@ -65,15 +50,11 @@ No. The software is evolving too fast for packaged images to stay useful. You ne
 
 Use the main upstream repository for the most stable experience. Forks exist for experimental features (e.g. voice calls via Tetrapack/Brew). See [Contributions, Forks and Issues](./10-Contributions,-forks-and-Issues.md) for the full list of known forks and what they offer.
 
----
-
 ### Does it support voice calls?
 
 Not in the main branch, yet, expect this to change very soon. 
 
 Experimental voice support exists in the [`tetrapack-calls`](https://github.com/misadeks/tetra-bluestation/tree/tetrapack-calls) fork — see [Contributions, Forks and Issues](./10-Contributions,-forks-and-Issues.md).
-
----
 
 ## Configuration
 
@@ -81,15 +62,11 @@ Experimental voice support exists in the [`tetrapack-calls`](https://github.com/
 
 Copy the example config and follow the [Configuration](./03-Configuration.md) page. That page lists the minimum fields you must change and explains every parameter.
 
----
-
 ## Legal
 
 ### Is it legal to run this?
 
 Transmitting requires authorization. You are solely responsible for compliance. See the *Licensing and Regulatory Compliance* section on the [Requirements](./01-Requirements.md) page.
-
----
 
 ## Getting Help
 
@@ -98,8 +75,6 @@ Transmitting requires authorization. You are solely responsible for compliance. 
 Join the community Telegram group: [https://t.me/+WtWvrlb43NVkNjE0]
 
 It's the best place for quick questions, setup help, and general discussion.
-
----
 
 ### I think I've found a bug
 
