@@ -71,7 +71,7 @@ Transmitting requires authorization. You are solely responsible for compliance. 
 
 ### I have a question or need help getting started
 
-Join the community Telegram group: (https://t.me/+WtWvrlb43NVkNjE0)
+Join the community Telegram group: https://t.me/+ZhT3bvs_LHUwNmQ0
 
 It's the best place for quick questions, setup help, and general discussion.
 

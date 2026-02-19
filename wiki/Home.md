@@ -17,7 +17,7 @@ The following Wiki is structured as follows:
 
 For quick answers to common questions, see the [Frequently Asked Questions](./30-Frequently-Asked-Questions.md) page.
 
-Join the community Telegram group: (https://t.me/+WtWvrlb43NVkNjE0)
+Join the community Telegram group: https://t.me/+ZhT3bvs_LHUwNmQ0
 
 > ⚠️ **Experimental Software Warning**
 >
