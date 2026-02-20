@@ -142,26 +142,16 @@ Optional Cell Parameters (Broadcast & Mobility)
 | `frame_18_ext` | `false` | `true`, `false` | Frame 18 extension support. |
 
 
-# [brew]: Brew (TETRA Homebrew Protocol) — Experimental
+# [brew]: Brew (TETRA Homebrew Protocol)
 
-> ⚠️ **Important**
->
-> This section originates from a **fork** and is **not officially supported** by the main TETRA BlueStation project.
-> The implementation is experimental, incomplete, and **subject to rapid change without notice**.
-> Configuration keys, behavior, and protocol compatibility may change at any time.
->
-> Use at your own risk.
->
 
 | Parameter | Default / Example | Possible Values | Notes |
 |----------|--------------------|-----------------|-------|
-| `enabled` | `false` | `true`, `false` | Enables Brew protocol support when set to `true`. |
 | `host` | System-dependent | String: Hostname or IP address | Brew server address. |
 | `port` | `3003` | Integer (TCP port) | Brew server port. |
 | `tls` | `true` | `true`, `false` | TLS is required (`wss://` / `https://`). |
-| `user_agent` | `"TETRAHS/012345"` | String | Required. Format must be `TETRAHS/XXXXXX`. |
 | `username` | _none_ | String | HTTP Digest auth username (required when enabled). For TPC: DMRID (plus optional SSID) |
 | `password` | _none_ | String | HTTP Digest auth password (required when enabled). For TPC: hotspot password |
 | `issi` | _none_ | Integer | ISSI used to register with the server. For TPC: DMRID |
-| `groups` | `[9, 91]` | Array of integers | Group IDs (GSSIs) to affiliate with; talkgroups this BTS connect to through Brew. |
+| `groups` | `[9, 91]` | Array of integers | Group IDs (GSSIs) to affiliate with; talkgroups this BTS connect to through Brew. DEPRECATED - Marked for deletion |
 | `reconnect_delay_secs` | `15` | Integer (seconds) | Delay before reconnect attempts after disconnect. |

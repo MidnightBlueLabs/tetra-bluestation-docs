@@ -6,7 +6,7 @@ A “good enough” computer is one that can reliably handle real-time DSP, sche
 
 As a reference point:
 
-- A Raspberry Pi 4 (2 GB) has been shown to run tetra-bluestation reliably in typical test setups.
+- A Raspberry Pi 4 (2 GB) has been shown to run tetra-bluestation reliably in typical test setups. Raspberry Pi 3, Pi Zero and Pi Zero 2 have shown to be unstable in quite a few occurences.
 - Any modern x86_64 system (laptop, desktop, or small server) with comparable or better performance should be sufficient.
 
 Minimum practical requirements:
@@ -27,8 +27,9 @@ Performance will also be affected if logging is enabled.
 
 ## Operating System
 
-- Tested with recent stable Debian releases
-- Other Linux distributions may work but are not documented yet
+- Tested with recent stable Debian releases.
+- On Raspberry Pi, most tests have been performed with [Raspberry Pi OS **Lite** - Debian 13 (Trixie)](https://www.raspberrypi.com/software/operating-systems/).
+- Other Linux distributions may work but are not documented yet.
 
 The documentation and examples assume a Debian-based system layout, package names, and tooling.
 

@@ -1,16 +1,22 @@
 ## General
 
+
+> ⚠️ **Experimental Software Warning**
+>
+> *tetra-bluestation* is **highly experimental** software.
+>
+> Please check back regularly, as features get added very quickly and other topics might be covered.
+
 ### What is tetra-bluestation?
 
 A free and open-source TETRA base station software stack for experimentation and research. See the [[Introduction|00-Introduction]] for a full description, and the *What works / Not functional* sections there for the current feature status.
-
 
 ### Is this ready for production or operational use?
 No. See the warning on the [[Home|Home]] page.
 
 ### May I connect it to TETRAPack - tmo.services - xxx?
 
-At the time of writing this FAQ, only a specific fork supports connection to TETRAPack. Keep in mind you must be holder of a valid amateur radio license to join that network.
+Yes. TETRAPack is currently implemented via the Brew link protocol, but theoretically any service that implements that procotol would support it. 
 
 ## SDR Hardware Compatibility
 
@@ -37,6 +43,8 @@ Yes — a Raspberry Pi 4 (2 GB) has been confirmed to work. See [[Requirements|0
 You might be able to get away with lower-spec hardware, but as this software grows, expect the requirements to increase as well. 
 
 BlueStation officialy aims to support Pi5, so if in the future the compute loads turns out to be too heavy, Pi4 support might have to be dropped.
+
+All install procedures have been written with Debian 13 "Trixie" - Raspberry Pi OS in mind. 
 
 ### Is there a ready-made SD card image or binary I can download?
 
