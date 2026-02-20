@@ -150,8 +150,8 @@ Optional Cell Parameters (Broadcast & Mobility)
 | `host` | System-dependent | String: Hostname or IP address | Brew server address. |
 | `port` | `3003` | Integer (TCP port) | Brew server port. |
 | `tls` | `true` | `true`, `false` | TLS is required (`wss://` / `https://`). |
-| `username` | _none_ | String | HTTP Digest auth username (required when enabled). For TPC: DMRID (plus optional SSID) |
+| `username` | _none_ | Integer | HTTP Digest auth username (required when enabled). For TPC: DMRID (plus optional SSID) |
 | `password` | _none_ | String | HTTP Digest auth password (required when enabled). For TPC: hotspot password |
 | `issi` | _none_ | Integer | ISSI used to register with the server. For TPC: DMRID |
-| `groups` | `[9, 91]` | Array of integers | Group IDs (GSSIs) to affiliate with; talkgroups this BTS connect to through Brew. DEPRECATED - Marked for deletion |
+| `groups` | `[9, 91]` | Array of integers | Group IDs (GSSIs) to affiliate with; talkgroups this BTS connect to through Brew. DEPRECATED - Marked for deletion. |
 | `reconnect_delay_secs` | `15` | Integer (seconds) | Delay before reconnect attempts after disconnect. |
