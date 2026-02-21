@@ -19,7 +19,7 @@ This approach ensures that BlueStation remains reliable while still evolving thr
 
 ## Known forks and experimental variants
 
-The following section lists known forks of tetra-bluestation. Forks are an important part of the ecosystem, but inclusion here does not imply endorsement, support, or compatibility with the main project.
+The following section lists known forks of tetra-bluestation. Forks are an important part of the ecosystem, and help maintainers test features before creating pull requests. 
 
 This list exists for visibility and transparency only, to help contributors and users understand what exists in the wider ecosystem.
 
@@ -30,7 +30,6 @@ This list exists for visibility and transparency only, to help contributors and 
 > - Features may be experimental, incomplete, or non-standard  
 > - Behaviour, APIs, and configuration formats may change without notice  
 > - Forks may not follow the same stability or review standards as the main project  
-> - Being listed here does not imply future upstream integration.
 
 Users are encouraged to evaluate forks carefully before deploying them in any environment.
 
@@ -43,18 +42,17 @@ Users are encouraged to evaluate forks carefully before deploying them in any en
 - Notes:
   - Introduces additional configuration sections (see Configuration page, `brew` section)
   - Follow same build process as upstream, but don't forget to  `git checkout tetrapack-calls` before building
-- Upstream intent: TBD  
+- Upstream intent: cherry-picked features are currently being merged back upstream. 
 
 ### tetra-bluestation brew
 
 - Repository: https://github.com/proxiboi69/tetra-bluestation/tree/brew
 - Maintainer(s): [proxiboi69](https://github.com/proxiboi69) 
 - Primary focus: Implement voice call handling, interface with Tetrapack via Brew protocol
-- Status: experimental  
+- Status: working, experimental  
 - Notes:
-  - Introduces additional configuration sections (see Configuration page, `brew` section)
-  - Follow same build process as upstream, but don't forget to  `git checkout brew` before building
-- Upstream intent: TBD  
+  - Tests multiple stability fixes
+- Upstream intent: cherry-picked features are currently being merged back upstream.   
 
 ### tetra-bluestation sds
 
@@ -63,8 +61,8 @@ Users are encouraged to evaluate forks carefully before deploying them in any en
 - Primary focus: Implement SDS capability, with a web interface
 - Status: working, experimental  
 - Notes:
-  - TBD
-- Upstream intent: TBD  
+  - TBD.
+- Upstream intent: TBD.
 
 ### Notes for fork authors
 

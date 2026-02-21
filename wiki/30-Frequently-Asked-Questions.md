@@ -34,6 +34,13 @@ No, not at this time. These devices lack reliable hardware timestamping, which i
 
 No. The HackRF is half-duplex — it cannot transmit and receive at the same time, which a TETRA base station must do. This is a fundamental hardware limitation.
 
+### I need a Power Amplifier! 
+
+Depends on your needs: if you plan to use this stack on a "hotspot" configuration, you probably won't need more than what the SDR puts out (between 0 and 10dBm depending on hardware). 
+
+If you want to create a more powerful base station to cover a larger area, please read the [[Miscellaneous|20-Miscellaneous]] section about challenges of amplifying a TETRA (Pi/4 DQPSK) signal.
+
+*An SWR/Power meter is not enough!* You need proper measuring equipment to make sure your signal is "clean". Again, refer to the Miscellaneous section. 
 
 ## Host System
 
@@ -55,13 +62,15 @@ No. The software is evolving too fast for packaged images to stay useful. You ne
 
 ### Should I use the main branch or a fork?
 
-Use the main upstream repository for the most stable experience. Forks exist for experimental features (e.g. voice calls via Tetrapack/Brew). See [[Contributions, Forks and Issues|10-Contributions,-forks-and-Issues]] for the full list of known forks and what they offer.
-
+Use the main upstream repository for the most stable experience. Forks exist for experimental features, and are used by the dev team to create pull requests to the upstream repository.
 ### Does it support voice calls?
 
-Not in the main branch, yet, expect this to change very soon. 
+At this stage, group calls are supported. Full Duplex is being worked on.
 
-Experimental voice support exists in the [`tetrapack-calls`](https://github.com/misadeks/tetra-bluestation/tree/tetrapack-calls) fork — see [[Contributions, Forks and Issues|10-Contributions,-forks-and-Issues]].
+
+### Does it support SDS/Packet Data/DGNA/...?
+
+Not yet. It is on the roadmap, but we're currently focused on stability and bugfixes with the current feature set. 
 
 ## Configuration
 

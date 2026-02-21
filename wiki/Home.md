@@ -26,7 +26,7 @@ Join the community Telegram group: https://t.me/+ZhT3bvs_LHUwNmQ0
 > - Interfaces, features, and internal behavior may change at any time.
 > - Things **will break** occasionally, sometimes in creative ways.
 > - New features and bug fixes are added frequently.
-> - Documentation and wiki content may **lag behind the current code** and should not be assumed to be fully up to date.
+> - Documentation and wiki content may lag behind the current code by a few hours/days.
 >
 > This project is intended for experimentation, research, and learning.  
 > Do not rely on it for production use, safety-critical systems, or operational networks.
