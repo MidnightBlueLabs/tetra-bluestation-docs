@@ -40,7 +40,7 @@ Depends on your needs: if you plan to use this stack on a "hotspot" configuratio
 
 If you want to create a more powerful base station to cover a larger area, please read the [[Miscellaneous|20-Miscellaneous]] section about challenges of amplifying a TETRA (Pi/4 DQPSK) signal.
 
-*An SWR/Power meter is not enough!* You need proper measuring equipment to make sure your signal is "clean". Again, refer to the Miscellaneous section. 
+**An SWR/Power meter is not enough!** You need proper measuring equipment to make sure your signal is "clean". Again, refer to the Miscellaneous section. 
 
 ## Host System
 
