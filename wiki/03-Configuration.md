@@ -107,6 +107,8 @@ The following table only lists generic settings, that will vary by device.
 > - `base_frequency_Hz` is the **reference/base frequency for the selected band**
 > - `freq_offset_Hz` is one of: `-6250`, `0`, `+6250`, `+12500`
 
+> [This tool by BU2HB will help in calculating frequency values](https://dimetra.russel053.com/)
+
 > **Example (freq_band = 4, base/reference = 400 MHz)**
 
 > - `base_frequency_Hz = 400 000 000`
