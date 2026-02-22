@@ -63,6 +63,11 @@ ls -l /proc/device-tree/hat
 SoapySDRUtil --find
 ```
 
+Don't forget to cd back into your home before continuing.
+```bash
+cd
+```
+
 
 ### LimeSDR-related dependencies
 _Skip this section if you're not using the LimeSDR platform._
