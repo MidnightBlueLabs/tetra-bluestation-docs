@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.5.0] - 13/03/2026
+### Added
+- SDS support, including interconnection with Brew.
+- feature_sds_enabled flag in the [brew] configuration section, to disable SDS forwarding to Brew.
+- UL inactivity timeout to detect stuck or disappeared radios mid-TX.
+### Changed
+- Scheduler improvements.
+- Brew default port updated to 443 and default username updated to SSID.
+- Bitbuffer improvements.
+
 ## [0.4.9] - 27/02/2026
 ### Added
 - Dynamic ISSI → Brew attachment support.

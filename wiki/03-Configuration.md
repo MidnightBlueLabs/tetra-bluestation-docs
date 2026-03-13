@@ -159,3 +159,4 @@ Optional Cell Parameters (Broadcast & Mobility)
 | `reconnect_delay_secs` | `15` | Integer (seconds) | Delay before reconnect attempts after disconnect. |
 | `jitter_initial_latency_frames` | `0` | Integer | Adds fixed startup latency (in frames) for inbound Brew jitter buffering. Adaptive buffering remains enabled. |
 | `whitelisted_ssis` | [91] | List of SSIs | Limits Brew transmission to listed SSIs only. If unset, all non-local SSIs are allowed over Brew. |
+| `feature_sds_enabled` | `true` | `true`, `false` |  Enable SDS forwarding between local and Brew clients. |

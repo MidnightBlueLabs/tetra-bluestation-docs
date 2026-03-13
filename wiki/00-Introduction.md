@@ -9,10 +9,10 @@
 - Parsing/building code for mostly all core TETRA PDUs across all OSI layers are present and can be used as desired (currently unused types need sanity checking)
 - Registration of an MS on the running BS stack and group attachment works
 - Voice codec, Group calls, interconnect to networked systems (TetraPack) works
+- SDS and interconnects works
 
 ## Not functional / not implemented
 - MS (Mobile Station, radio) and monitoring implementation not fully functional. 
-- Mle and everything above is a skeleton implementation that has to be extended where needed
 
 
 

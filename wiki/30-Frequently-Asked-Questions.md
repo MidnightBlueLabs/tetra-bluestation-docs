@@ -67,8 +67,11 @@ Use the main upstream repository for the most stable experience. Forks exist for
 
 At this stage, group calls are supported. Full Duplex is being worked on.
 
+### Does it support SDS?
 
-### Does it support SDS/Packet Data/DGNA/...?
+Yes.
+
+### Does it support Packet Data/DGNA/...?
 
 Not yet. It is on the roadmap, but we're currently focused on stability and bugfixes with the current feature set. 
 
