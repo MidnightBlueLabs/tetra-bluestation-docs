@@ -5,6 +5,7 @@
 - SDS support, including interconnection with Brew.
 - feature_sds_enabled flag in the [brew] configuration section, to disable SDS forwarding to Brew.
 - UL inactivity timeout to detect stuck or disappeared radios mid-TX.
+- LLC TX retransmission support for reliable message delivery
 ### Changed
 - Brew default port updated to 443 and default username updated to SSID.
 - Bitbuffer improvements.
