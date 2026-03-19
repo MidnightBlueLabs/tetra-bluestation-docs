@@ -54,6 +54,10 @@ make
 sudo make install
 sudo ldconfig
 ```
+Check that the driver is available:
+```bash
+SoapySDRUtil --info
+```
 Check that the device is detected:
 ```bash
 ls -l /proc/device-tree/hat
@@ -79,6 +83,10 @@ Ensure udev rules are installed and reload them if necessary:
 sudo udevadm control --reload-rules
 sudo udevadm trigger
 ```
+Check that the driver is available:
+```bash
+SoapySDRUtil --info
+```
 Check that the device is detected:
 ```bash
 LimeUtil --find
@@ -102,6 +110,10 @@ sudo uhd_images_downloader
 ```
 If you're using a USRP clone (LibreSDR B210 for instance), you might have to replace the original bitstream/firmware. [More information here.](https://github.com/lmesserStep/LibreSDRB210)
 
+Check that the driver is available:
+```bash
+SoapySDRUtil --info
+```
 Check that your USRP device is detected correctly:
 ```bash
 uhd_find_devices
@@ -109,6 +121,51 @@ SoapySDRUtil --find
 ```
 You should see your USRP model listed on both commands. If not, verify USB/Ethernet connectivity and power.
 
+### PlutoSDR-related dependencies
+_Skip this section if you're not using the PlutoSDR platform (original Adalm Pluto or Pluto+). Other Pluto "clones" are not supported._
+
+> **Note:** Do not use the low-quality USB cable shipped with the Pluto+. Use a good-quality cable to avoid connectivity issues.
+
+#### Flash a timestamping-capable firmware
+
+The stock firmware does not support the hardware timestamping required by TETRA-bluestation. You must flash a custom firmware first:
+
+- For the original Adalm Pluto: https://github.com/pgreenland/plutosdr-fw/releases
+- For the Pluto+: https://github.com/wahlm/plutosdr-fw-timestamp/releases
+
+Follow the flashing instructions provided in the respective repository.
+
+#### Install the timestamping-capable SoapySDR driver
+
+The standard SoapyPlutoSDR driver does not support timestamping. Install the patched version:
+```bash
+git clone https://github.com/pgreenland/SoapyPlutoSDR.git -b sdr_gadget_timestamping
+cd SoapyPlutoSDR
+mkdir build && cd build
+cmake ..
+make -j$(nproc)
+sudo make install
+sudo ldconfig
+``` 
+
+Check that the driver is available:
+```bash
+SoapySDRUtil --info
+```
+
+The `plutosdr` module should appear in the list of available modules.
+
+#### Check that the device is detected
+```bash
+SoapySDRUtil --find
+```
+
+The Pluto should appear in the output. If you are connecting a Pluto+ over Ethernet or USB, you can specify the URI explicitly to select the right interface, for example:
+```bash
+SoapySDRUtil --find="driver=plutosdr,uri=ip:pluto.local"
+SoapySDRUtil --find="driver=plutosdr,uri=ip:192.168.42.42"
+SoapySDRUtil --find="driver=plutosdr,uri=usb:1.3.5"
+```
 
 ## Clone and build tetra-bluestation
 You can either build the upstream repository (which contains the latest stable features), or build a fork.

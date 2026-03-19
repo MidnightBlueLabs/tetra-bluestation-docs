@@ -1,4 +1,19 @@
 # Changelog
+## [0.5.3] - 19/03/2026
+### Added
+- Support for PlutoSDR and Pluto+ (additional setup required, see config file and/or documentation).
+### Changed
+- Various fixes in the SoapySDR layer.
+- Restructuring and fixes in time broadcast.
+
+## [0.5.2] - 19/03/2026
+### Added
+- Optional broadcast of the current time to connected MSes: set timezone = "Europe/Amsterdam" (or the appropriate timezone) in the [cell_info] configuration section.
+
+## [0.5.1] - 19/03/2026
+### Changed
+- Major LLC layer revamp: transmission logic is now substantially more standards-compliant, including message withholding until a previous message has been acknowledged by the MS, and retransmission of lost messages.
+
 
 ## [0.5.0] - 13/03/2026
 ### Added
