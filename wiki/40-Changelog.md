@@ -1,4 +1,10 @@
 # Changelog
+## [0.5.5] - 25/03/2026
+### Fixed
+- Resolved most LLC issues causing PTT denied behavior.
+## [0.5.4] - 23/03/2026
+### Fixed
+- Improved compatibility with Cleartone MSes.
 ## [0.5.3] - 19/03/2026
 ### Added
 - Support for PlutoSDR and Pluto+ (additional setup required, see config file and/or documentation).
