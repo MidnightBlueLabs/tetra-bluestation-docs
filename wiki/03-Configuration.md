@@ -46,7 +46,7 @@ The configuration is split in multiple sections:
 # Global Configuration
 | Parameter        | Default / Example | Possible Values                     | Notes |
 |------------------|-------------------|--------------------------------------|-------|
-| `config_version` | `"0.5"`(version dependent)           | String (version identifier)          | Must match the configuration format expected by the running BlueStation version. |
+| `config_version` | `"0.6"`(version dependent)           | String (version identifier)          | Must match the configuration format expected by the running BlueStation version. This version number is not Bluestation's but the configuration files' |
 | `stack_mode`     | `"Bs"`            | String: `"Bs"`, `"Ms"`, `"Mon"`              | Base Station, Mobile Station, or Monitor mode (the latter two aren't available yet). `"Bs"` required for cell operation. |
 | `debug_log`      | _disabled_        | String (File path)                            | Enables verbose logging; large files and additional system load. |
 
