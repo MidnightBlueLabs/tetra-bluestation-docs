@@ -78,7 +78,7 @@ Uncomment the SDR you're using, comment out any others. Only **one** `iocfg_*` s
 | `rx_gain_lna` | `18.0` | Float (dB) | RX LNA gain stage. |
 | `rx_gain_tia` | `6.0` | Float (dB) | RX TIA gain stage. |
 | `rx_gain_pga` | `10.0` | Float (dB) | RX PGA gain stage. |
-| `tx_gain_pad` | `18.0` | Float (dB) | TX PAD gain stage. |
+| `tx_gain_pad` | `22.0` | Float (dB) | TX PAD gain stage. |
 | `tx_gain_iamp` | `3.0` | Float (dB) | TX IAMP gain stage. |
 
 ### [phy_io.soapysdr.iocfg_limesdr]: LimeSDR Mini v2
@@ -90,7 +90,7 @@ Uncomment the SDR you're using, comment out any others. Only **one** `iocfg_*` s
 | `rx_gain_lna` | `18.0` | Float (dB) | RX LNA gain stage. |
 | `rx_gain_tia` | `6.0` | Float (dB) | RX TIA gain stage. |
 | `rx_gain_pga` | `10.0` | Float (dB) | RX PGA gain stage. |
-| `tx_gain_pad` | `18.0` | Float (dB) | TX PAD gain stage. |
+| `tx_gain_pad` | `22.0` | Float (dB) | TX PAD gain stage. |
 | `tx_gain_iamp` | `3.0` | Float (dB) | TX IAMP gain stage. |
 
 > Both models share the same `iocfg_limesdr` section key in `config.toml`. Only one should be active at a time.
