@@ -126,14 +126,16 @@ _Skip this section if you're not using the PlutoSDR platform (original Adalm Plu
 
 > **Note:** Do not use the low-quality USB cable shipped with the Pluto+. Use a good-quality cable to avoid connectivity issues.
 
-#### Flash a timestamping-capable firmware
+#### Install a timestamping-capable firmware
 
-The stock firmware does not support the hardware timestamping required by TETRA-bluestation. You must flash a custom firmware first:
+The stock firmware does not support the hardware timestamping required by TETRA-bluestation. You must
+install a custom firmware first:
 
 - For the original Adalm Pluto: https://github.com/pgreenland/plutosdr-fw/releases
 - For the Pluto+: https://github.com/wahlm/plutosdr-fw-timestamp/releases
 
-Follow the flashing instructions provided in the respective repository.
+Follow the flashing instructions provided in the respective repository or
+alternatively create a bootable SD-Card for Pluto+.
 
 #### Install the timestamping-capable SoapySDR driver
 
@@ -166,6 +168,24 @@ SoapySDRUtil --find="driver=plutosdr,uri=ip:pluto.local"
 SoapySDRUtil --find="driver=plutosdr,uri=ip:192.168.42.42"
 SoapySDRUtil --find="driver=plutosdr,uri=usb:1.3.5"
 ```
+
+#### Using the device as a normal user
+
+USB access and the SoapySDR driver need root priviledges. To be able to use
+the device as a normal user you need to:
+
+- allow USB access
+```bash
+echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="0456", ATTR{idProduct}=="b673", MODE="666"' | sudo tee /etc/udev/rules.d/90-libiio_pluto.rules
+sudo udevadm control --reload-rules && sudo udevadm trigger
+```
+- allow setting of real time prio
+
+add line to /etc/security/limits.conf (needs root priviledges)
+```
+@users           -       rtprio          99
+```
+You need to logout and login again for this to take effect.
 
 ## Clone and build tetra-bluestation
 You can either build the upstream repository (which contains the latest stable features), or build a fork.
