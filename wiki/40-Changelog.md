@@ -1,4 +1,14 @@
 # Changelog
+## [0.5.8] - 29/03/2026
+### Added
+- Telemetry component: runs as a separate thread, sends event data to an external telemetry service.
+- Control component: runs as a separate thread, allows the BS to receive commands from an external control service.
+- Sample systemd service file.
+### Changed
+- `tetra-bluestation` executable renamed to `bluestation-bs`, to be complemented by new `bluestation-telemetry` and `bluestation-control` executables for remote telemetry and control features.
+- Various internal refactors.
+## [0.5.7] - 28/03/2026
+Interim version in non-main branch.
 ## [0.5.6] - 25/03/2026
 ### Added
 - Running version is now printed on startup.
