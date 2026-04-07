@@ -28,7 +28,7 @@ Performance will also be affected if logging is enabled.
 ## Operating System
 
 - Tested with recent stable Debian releases.
-- On Raspberry Pi, most tests have been performed with [Raspberry Pi OS **Lite** - Debian 13 (Trixie - 64 bit)](https://www.raspberrypi.com/software/operating-systems/).
+- On Raspberry Pi, most tests have been performed with [Raspberry Pi OS **Lite** - Debian 13 (Trixie - 64 bit)](https://www.raspberrypi.com/software/operating-systems/). Please do no use the "Full" image as the GUI might interfere with some SDRs such as the SxCeiver.
 - Other Linux distributions may work but are not documented yet.
 
 The documentation and examples assume a Debian-based system layout, package names, and tooling.
