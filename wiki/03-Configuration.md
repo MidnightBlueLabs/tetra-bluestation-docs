@@ -19,6 +19,8 @@ nano config.toml
 * `main_carrier` : change value to match the Tx frequency downlink (see calculation procedure in the notes below). Edit `freq_offset` if needed.
 * `duplex_spacing` : if you want to use a custom duplex spacing, change this value to 7, uncomment `custom_duplex_spacing` and set the offset there. 
 
+[This tool by BU2HB will help in preparing a working config file](https://bluestation.russel053.com)
+
 
 
 
@@ -167,7 +169,7 @@ Please note that most original PlutoSDRs have a significant frequency error and 
 > - `base_frequency_Hz` is the **reference/base frequency for the selected band**
 > - `freq_offset_Hz` is one of: `-6250`, `0`, `+6250`, `+12500`
 
-> [This tool by BU2HB will help in calculating frequency values](https://dimetra.russel053.com/)
+> [This tool by BU2HB will help in calculating frequency values](https://bluestation.russel053.com)
 
 > **Example (freq_band = 4, base/reference = 400 MHz)**
 
