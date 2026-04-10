@@ -1,23 +1,23 @@
 The following instructions assume a Debian-based system. All commands are written and tested with Debian in mind.
 
 The setup follows this process:
-1. **General dependencies**  
+1. **General dependencies**
    Install the Rust toolchain and common system libraries required to build and run the project.
 
-2. **Hardware-specific dependencies**  
+2. **Hardware-specific dependencies**
    Install additional drivers or libraries depending on the selected SDR hardware (for example, SxCeiver-specific requirements).
 
-3. **Clone and build tetra-bluestation**  
+3. **Clone and build tetra-bluestation**
    Fetch the source code from the Git repository and compile the software.
 
 Each step is described in detail in the sections below.
 
 > ⚠️ **These commands have no brain, please use your own!**
 >
-> As a general rule, please take some time to examine (_and understand_) the commands and what they do before copy-pasting them. 
+> As a general rule, please take some time to examine (_and understand_) the commands and what they do before copy-pasting them.
 > Safest practice is not to copy-paste at all but re-typing them. [Here's a small example of why.](https://www.bleepingcomputer.com/news/security/dont-copy-paste-commands-from-webpages-you-can-get-hacked/)
-> We do our best to document as precisely as possible, but honest mistakes can also happen. 
-> 
+> We do our best to document as precisely as possible, but honest mistakes can also happen.
+>
 > All of it could potentially ruin your setup (from which we cannot be held responsible).
 
 
@@ -31,12 +31,14 @@ sudo apt install -y --no-install-recommends \
   libsoapysdr-dev \
   soapysdr-tools \
   libasound2-dev \
-  clang llvm-dev libclang-dev
+  clang llvm-dev libclang-dev \
+  rustup
 ```
 
-Then, install Rust. Rustup is the easiest way to get the most up-to-date toolchain: 
+Then, install Rust. Rustup is the easiest way to get the most up-to-date toolchain:
 ```bash
-curl https://sh.rustup.rs -sSf | sh
+sudo apt install rustup
+rustup default stable
 ```
 ## Hardware-specific dependencies
 ### SxCeiver-related dependencies
@@ -148,7 +150,7 @@ cmake ..
 make -j$(nproc)
 sudo make install
 sudo ldconfig
-``` 
+```
 
 Check that the driver is available:
 ```bash
@@ -196,7 +198,7 @@ git clone https://github.com/MidnightBlueLabs/tetra-bluestation
 cd tetra-bluestation
 ```
 
-If you want to use another branch, replace `main`. 
+If you want to use another branch, replace `main`.
 
 ```bash
 git checkout main
