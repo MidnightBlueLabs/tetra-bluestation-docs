@@ -71,6 +71,13 @@ Don't forget to cd back into your home before continuing.
 cd
 ```
 
+#### SXceiver device access as normal user
+
+To allow normal user to access the SXceiver, permissions need to be added for the user. This will grant USER to access the SPI and GPIO of the Raspberry. Replace USER with the real user name.
+
+```bash
+sudo usermod -a -G spi,gpio USER
+```
 
 ### LimeSDR-related dependencies
 _Skip this section if you're not using the LimeSDR platform._
