@@ -1,4 +1,13 @@
 # Changelog
+## [0.5.9] - 27/04/2026
+### Added
+- Energy economy: MSes are now instructed to use StayAlive instead of previous out-of-spec behavior.
+### Changed
+- `local_ssi_ranges` range end is now inclusive: a range of `1-90` now includes `90`.
+- Various TetraPack-specific code replaced by TetraPack-friendly defaults.
+- Various refactors in the lower layers, preparing for further restructuring.
+### Fixed
+- Various standards-compliance fixes.
 ## [0.5.8] - 29/03/2026
 ### Added
 - Telemetry component: runs as a separate thread, sends event data to an external telemetry service.
