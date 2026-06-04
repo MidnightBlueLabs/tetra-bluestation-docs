@@ -69,6 +69,31 @@ Don't forget to cd back into your home before continuing.
 cd
 ```
 
+### µCell-related dependencies
+_Skip this section if you're not using the µCell platform._
+
+Run this install script: 
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/Jankyneering/mu-cell/main/install-mu-cell-sw.sh)"
+```
+
+This will check if all dependencies are installed, clone the mu-cell driver and dts. Reboot the Pi after running the script as it needs to reload the device tree. 
+
+Check that the driver is available:
+```bash
+SoapySDRUtil --info
+```
+Check that the device is detected:
+```bash
+ls -l /proc/device-tree/hat
+SoapySDRUtil --probe=driver=mucell
+```
+
+Don't forget to cd back into your home before continuing.
+```bash
+cd
+```
+
 
 ### LimeSDR-related dependencies
 _Skip this section if you're not using the LimeSDR platform._

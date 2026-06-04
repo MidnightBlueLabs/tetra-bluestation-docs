@@ -41,6 +41,7 @@ The documentation and examples assume a Debian-based system layout, package name
 | **USRP**         | ✅        | Well-supported hardware family with robust timing and synchronization features. |
 | **LibreSDR B205/B210**     | ⚠️       | Supported. Will require a [custom bitstream](https://github.com/lmesserStep/LibreSDRB210). RF performance isn't guaranteed. |
 | **SxCeiver**     | ✅        | Supported via the [SoapySX driver](https://github.com/tejeez/sxxcvr). |
+| **µCell**     | ✅        | Supported via the [mu-cell driver](https://github.com/Jankyneering/mu-cell). |
 | **PlutoSDR / Pluto+** | ✅   | Supported via a timestamped firmware mod. See "Dependencies and Building" section. |
 | **LibreSDR ZynqSDR / OpenSourceSDRLab 7010/7020**|⚠️ | Supported if available timestamped firmware.|
 | **HackRF**       | ❌        | Half-duplex design and timing limitations make it unsuitable for base-station use. |
